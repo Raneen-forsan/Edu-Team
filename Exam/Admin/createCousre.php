@@ -1,6 +1,7 @@
 <?php include('include/header.php');?>
-<?php require('classes/courseClass.php');?>
-<?php require('classes/class_admin.php');?>
+<?php include('classes/courseClass.php');?>
+
+
 <?php
 
     $x=new Course();
@@ -12,7 +13,7 @@
         
         echo $x->CreateCourse($courseName,$cousreDescription);
 
-        // header('createCourse.php');
+
     }
 ?>
 
@@ -39,27 +40,7 @@
                                                     autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
                                                 <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
                                             </div>
-                                             <div class="form-group">
-                                                    <label for="cc-number" class="control-label mb-1">Teacher</label>
-                                                    <select name="teacher">
-                                                    <?php
-                                                    
-                                                //     $y = new Admin();
-                                                    
-                                                //     while($datta = $y->readAll()){
-                                                //         foreach ($datta as $key => $value) {
-                                                //             echo "<option> ".$value['full_name']." </option>";
-                                                    
-                                                //     }
-
-                                                // }
-                                                    
-                                                    ?>
-                                                    </select>
-                                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
-                                                </div>
-                                            
-                                            <div>
+                                             <div>
                                                 <button id="payment-button" type="submit" name="submit" class="btn btn-lg btn-info btn-block">
                                                     
                                                     <span id="payment-button-amount">Create</span>
@@ -83,7 +64,6 @@
                                                 <th>Course ID</th>
                                                 <th>Course Name</th>
                                                 <th>Course Description</th>
-                                                <th>Admin ID</th>
                                                 <th>Edit</th>
                                                 <th>Delete</th>
                                             </tr>
@@ -94,15 +74,15 @@
                                                 $rslt=$x->selectCourseData();
                                                 
                                                 while($data=$x->fetchAll($rslt)){
+                                                    foreach ($data as $key => $value){
                                                 echo "<tr>";
-                                                echo "<td>{$data['course_id']}</td>";
-                                                echo "<td>{$data['course_name']}</td>";
-                                                echo "<td>{$data['course_description']}</td>";
-                                                echo "<td>></td>";
-                                               
-                                                echo "<td><a href='' class='btn btn-primary'>Edit</a></td>";
-                                                echo "<td><a href='' class='btn btn-danger'>Delete</a></td>";
+                                                echo "<td>{$value['course_id']}</td>";
+                                                echo "<td>{$value['course_name']}</td>";
+                                                echo "<td>{$value['course_description']}</td>";
+                                                echo "<td><a href='editCourse.php?id={$value['course_id']}' class='btn btn-primary'>Edit</a></td>";
+                                                echo "<td><a href='deleteCourse.php?id={$value['course_id']}' class='btn btn-danger'>Delete</a></td>";
                                                 echo "</tr>";
+                                                    }
                                             }
                                             ?>
                                         </tbody>

@@ -1,5 +1,5 @@
 
-<?php require('../include/DBconnection.php')?>
+<?php require('include/DBconnection.php')?>
 
 <?php
 
@@ -21,7 +21,28 @@
             
         }
 
+        public function deleteData($id){
 
+            $delete_query="delete from course where course_id=$id";
+             $this->performQuery($delete_query);
+             
+             
+        }
+
+        public function selectDataForUpdate($id){
+            $q = "SELECT * FROM course WHERE course_id=$id";
+            return $this->performQuery($q);
+        }
+
+        public function updateData($id){
+
+            $q = "UPDATE course SET course_name              = '$this->coursename',
+                                    course_description        = '$this->coursedesc'
+                                
+            WHERE course_id  = $id";
+            $this->performQuery($q);
+            
+        }
 
 
     }

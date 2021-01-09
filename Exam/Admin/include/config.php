@@ -2,7 +2,7 @@
 
 const DBSERVER = "localhost";
 const DBUSER   = "root";
-const DBPASS   = "root";
+const DBPASS   = "";
 const DBNAME   = "education"; 
 
 ?>

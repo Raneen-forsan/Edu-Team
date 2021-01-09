@@ -1,3 +1,41 @@
+<?php
+    session_start();
+    include("classes/class_login.php");
+    
+    $x = new login();
+
+    if(isset($_SESSION['email'])){
+         header("location:index.php");
+    }  
+
+    if (isset($_POST['sub'])) {
+         $x->email      = $_POST['email'];
+         $x->password   = $_POST['password'];
+
+        $printer = $x->VerifyLogin();
+
+        if ($printer){
+            $_SESSION['email']      = $x->email;
+
+            $_SESSION['fullname']   = $printer[0]['full_name'];
+            
+            header("location:index.php");    
+        }else{
+            $error = "User Not Found";
+        }
+
+        // foreach ($printer as $key => $value) {
+        //     foreach ($value as $key => $value) {
+        //         echo $value;
+        //     }            
+        // }
+    }
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,6 +87,14 @@
                         <div class="login-form">
                             <form action="" method="post">
                                 <div class="form-group">
+                                    <?php
+                                        if (isset($error)) {
+                                            echo"<div class='alert alert-danger' role='alert'>
+                                                {$error}
+                                            </div>
+                                            ";
+                                        }
+                                    ?>
                                     <label>Email Address</label>
                                     <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
                                 </div>
@@ -56,28 +102,10 @@
                                     <label>Password</label>
                                     <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
                                 </div>
-                                <div class="login-checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember">Remember Me
-                                    </label>
-                                    <label>
-                                        <a href="#">Forgotten Password?</a>
-                                    </label>
-                                </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
-                                <div class="social-login-content">
-                                    <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
-                                        <button class="au-btn au-btn--block au-btn--blue2">sign in with twitter</button>
-                                    </div>
-                                </div>
+                                
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" name="sub" type="submit">sign in</button>
+                                
                             </form>
-                            <div class="register-link">
-                                <p>
-                                    Don't you have account?
-                                    <a href="#">Sign Up Here</a>
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,9 +1,6 @@
 <?php include('include/header.php');?>
 
-
-<link rel="stylesheet" href="boot/bootstrap.min.css">
-
-<br><br><br><br>
+<div style="padding-top: 90px;">
 <div class="row">
 <div class="col-lg-2"></div>
 
@@ -48,7 +45,7 @@
                                             </div>
                                                 <div class="form-group">
                                                 <label for="cc-number" class="control-label mb-1">Choose Category</label><br>
-                                               <select id="cc-number" name="cc-number" style="width:650px;height:30px;">
+                                               <select id="cc-number" name="cc-number" style="width:100%;height:30px;">
                                                 <option>Cat1</option>       
                                                 </select>
                                                 <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
@@ -68,5 +65,7 @@
                                 </div>
                             </div>
 <div class="col-lg-2"></div>
+</div>
+
 </div>
 <?php include('include/footer.php');?>

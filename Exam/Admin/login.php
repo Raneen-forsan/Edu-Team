@@ -25,9 +25,7 @@
         }
 
         // foreach ($printer as $key => $value) {
-        //     foreach ($value as $key => $value) {
-        //         echo $value;
-        //     }            
+        //     $value[''];   
         // }
     }
 

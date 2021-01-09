@@ -40,6 +40,8 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="boot/bootstrap.min.css">
+
 
 </head>
 
@@ -74,31 +76,12 @@
                                 <i class="fas fa-table"></i>Create Course</a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="ManageQuiz.php">
                                 <i class="far fa-check-square"></i>Create Exam</a>
                         </li>
                         <li>
                             <a href="">
                                 <i class="fas fa-calendar-alt"></i>Calendar</a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="">Login</a>
-                                </li>
-                                <li>
-                                    <a href="">Register</a>
-                                </li>
-                                <li>
-                                    <a href="">Forget Password</a>
-                                </li>
-                            </ul>
                         </li>
                         
                     </ul>
@@ -127,32 +110,14 @@
                                 <i class="fas fa-table"></i>Create Course</a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="ManageQuiz.php">
                                 <i class="far fa-check-square"></i>Create Exam</a>
                         </li>
                         <li>
                             <a href="">
                                 <i class="fas fa-calendar-alt"></i>Students</a>
                         </li>
-                        <li>
-                            <a href="">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="login.html">Login</a>
-                                </li>
-                                <li>
-                                    <a href="register.html">Register</a>
-                                </li>
-                                <li>
-                                    <a href="forget-pass.html">Forget Password</a>
-                                </li>
-                            </ul>
-                        </li>
+                        
                         
                     </ul>
                 </nav>
@@ -337,3 +302,4 @@
                 </div>
             </header>
             <!-- HEADER DESKTOP-->
+        

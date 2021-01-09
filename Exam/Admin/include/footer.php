@@ -1,7 +1,13 @@
+<<<<<<< HEAD
+                       <br><br><br><br><br><br><br><br><br><br><br><br><br><br> <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+=======
 <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
                                     <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+>>>>>>> 84457917a213031dbc983c9b5497ed3a1f86de4c
                                 </div>
                             </div>
                         </div>
@@ -13,7 +19,10 @@
         </div>
 
     </div>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 84457917a213031dbc983c9b5497ed3a1f86de4c
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->

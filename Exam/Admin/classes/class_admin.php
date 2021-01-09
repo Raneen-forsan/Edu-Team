@@ -1,5 +1,5 @@
 <?php 
-require('include/DBconnection.php');
+require('../include/DBconnection.php');
 
 class Admin extends dbconnection{
 

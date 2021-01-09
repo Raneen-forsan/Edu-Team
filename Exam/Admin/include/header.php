@@ -75,7 +75,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="chart.html">
+                            <a href="manager_admin.php">
                                 <i class="fas fa-chart-bar"></i>Charts</a>
                         </li>
                         <li>
@@ -166,7 +166,7 @@
                     <ul class="list-unstyled navbar__list">
                        
                         <li>
-                            <a href="chart.html">
+                            <a href="manager_admin.php">
                                 <i class="fas fa-chart-bar"></i>Create Admin</a>
                         </li>
                         <li>

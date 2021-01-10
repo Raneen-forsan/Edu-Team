@@ -10,8 +10,6 @@ if ($row = $x->SelectUpdateStudent()) {
     }
 }
 
-$rr = $value['image'];
-
 if (isset($_POST['sub'])) {
     $x->email               = $_POST['email'];
     $x->full_name           = $_POST['fullname'];
@@ -25,7 +23,7 @@ if (isset($_POST['sub'])) {
         $path                   = "images_website/";
         move_uploaded_file($temp_name,$path.$x->image);      
     }else{
-        $rr;             
+        $x->image               = $value['image'];
     }
     $x->UpdateStudent();
     header("location: student.php");
@@ -98,6 +96,12 @@ include('include/header.php');
                                         
                                     <select name="education_level" class="form-control cc-number identified visa">
                                         <option><?php echo $value['education_level']; ?></option>
+                                        <option>Some High School</option>
+                                        <option>High School Diploma</option>
+                                        <option>Some College</option>
+                                        <option>Associate Degree</option>
+                                        <option>Bachelor's Degree</option>
+                                        <option>Master's Degree Or Higher</option>
                                         </select>
 
                                     <span class="help-block" data-valmsg-for="cc-number"

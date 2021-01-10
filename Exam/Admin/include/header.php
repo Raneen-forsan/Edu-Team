@@ -114,7 +114,7 @@
                                 <i class="far fa-check-square"></i>Create Exam</a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="student.php">
                                 <i class="fas fa-calendar-alt"></i>Students</a>
                         </li>
                         

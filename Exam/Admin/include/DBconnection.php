@@ -1,6 +1,6 @@
 <?php 
 
-require('include/config.php');
+require('config.php');
 
 
 Class dbconnection{

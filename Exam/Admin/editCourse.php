@@ -1,22 +1,18 @@
-<?php include('include/header.php');?>
 <?php include('classes/courseClass.php');?>
 <?php
 
      $x=new Course();
      $dta=$x->selectDataForUpdate($_GET['id']);
      $dtta=$x->fetchAll($dta);
-
+     $id = $_GET['id'];
      if(isset($_POST['save'])){
         $x->coursename = $_POST['course_name'];
         $x->coursedesc = $_POST['course_description'];
-        $x->updateData($_GET['id']);
+        $x->updateData($id);
+        header("location:createCousre.php");
+    }
 
-       
-       
-     }
-
-     header("location:createCousre.php");
-
+    include('include/header.php');
     ?>
     <div class="main-content">
                 <div class="section__content section__content--p30">
@@ -30,7 +26,7 @@
                                             <h3 class="text-center title-2">Update Course</h3>
                                         </div>
                                         <hr>
-                                        <form action="" method="post" novalidate="novalidate">
+                                        <form action="" method="post">
                                         <?php foreach ($dtta as $value) {?>
                                             <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Course Name</label>

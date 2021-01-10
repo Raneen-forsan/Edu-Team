@@ -12,7 +12,7 @@
         $cousreDescription = $_POST['course_description'];
         
         echo $x->CreateCourse($courseName,$cousreDescription);
-
+        echo '<meta http-equiv="refresh" content="0">';
 
     }
 ?>

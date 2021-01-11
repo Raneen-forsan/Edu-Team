@@ -10,39 +10,39 @@ class McQuestion extends dbconnection{
     public $choice_four;
     public $correct_answer;
     public $category_name;
-    public $Question_id;
     public $exam_image;
     public $tmp_name;
     public $path;
-   
+    public $Question_id;
     
 		public function create(){
-		$query = "INSERT INTO mcquiz(Question,choice_one,choice_two,choice_three,choice_four,
-               correct_answer,category_name,exam_image)
-				 VALUES('$this->Question','$this->choice_one',
-                        '$this->choice_two',
-                        '$this->choice_three','$this->choice_four',
-                        '$this->correct_answer','$this->category_name','$this->exam_image')";
-		$this->performQuery($query);
 
-           
+			$query = "INSERT INTO mcquiz(Question,choice_one,choice_two,choice_three,choice_four,
+	               correct_answer,category_name,exam_image)
+					 VALUES('$this->Question','$this->choice_one','$this->choice_two','$this->choice_three',
+					 		'$this->choice_four','$this->correct_answer','$this->category_name',
+					 		'$this->exam_image')";
+			$this->performQuery($query);           
 	}
 
 	public function readAll(){
 		$query  = "SELECT * FROM mcquiz";
 		$result = $this->performQuery($query);
-		return $this->fetchAll($result);
+		return    $this->fetchAll($result);
 	}
-    	public function readcategory(){
+	
+    public function readcategory(){
 		$query  = "SELECT * FROM course";
 		$result = $this->performQuery($query);
 		return $this->fetchAll($result);
-		}
-	public function readById($id){
-		$query  = "SELECT * FROM  mcquiz WHERE Question_id = $id";
-		$result = $this->performQuery($query);
-		return $this->fetchAll($result);	
 	}
+
+	public function readById($id){
+		$query  = "SELECT * FROM  mcquiz WHERE Question_id = '$id' ";
+		$result = $this->performQuery($query);
+		return    $this->fetchAll($result);	
+	}
+
 	public function update($id){ 
 		$query = "UPDATE mcquiz SET Question       = '$this->Question',
 								    choice_one     = '$this->choice_one',
@@ -52,13 +52,20 @@ class McQuestion extends dbconnection{
 								    correct_answer = '$this->correct_answer',
 								    category_name  = '$this->category_name',
 								    exam_image     = '$this->exam_image'
-								   WHERE Question_id   = $id";
+								    WHERE Question_id   = $id";
 		$this->performQuery($query);
 	}
 	public function delete($id){
 		$query = "DELETE FROM mcquiz WHERE Question_id = $id";
 		$this->performQuery($query);
 	}
+
+
+	public function view_course(){
+        $q  = "SELECT course_name FROM course";
+        return $this->performQuery($q);
+            
+    }
 
 }
 

@@ -3,23 +3,25 @@
 include('classes/MCQuestionClass.php');
 
 
-$x=new McQuestion();
-     $id=$_GET['id'];
-     $data = $x->readById($id);
- 
+     $x     = new McQuestion();
+
+     $id    = $_GET['id'];
+     
+    if ($data  = $x->readById($id)) {
+         foreach ($data as $key => $value) {
+         }
+     } 
+
 
    if(isset($_POST['submit']))
     {
-$x->Question       = $_POST['question'];
-$x->choice_one	   = $_POST['answerone'];
-$x->choice_two     = $_POST['answertwo'];
-$x->choice_three   = $_POST['answerthree'];
-$x->choice_four    = $_POST['answerfour'];
-$x->correct_answer = $_POST['correctanswer'];
-$x->category_name  = $_POST['categoryname'];
-
-
-       
+        $x->Question       = $_POST['question'];
+        $x->choice_one	   = $_POST['answerone'];
+        $x->choice_two     = $_POST['answertwo'];
+        $x->choice_three   = $_POST['answerthree'];
+        $x->choice_four    = $_POST['answerfour'];
+        $x->correct_answer = $_POST['correctanswer'];
+        $x->category_name  = $_POST['categoryname'];
        
        if ($_FILES['exam_image']['name'] != ""){
         $x->exam_image          = $_FILES['exam_image']['name'];
@@ -28,11 +30,10 @@ $x->category_name  = $_POST['categoryname'];
         move_uploaded_file($temp_name,$path.$x->exam_image);      
     }else{
            foreach ($data as $value) {
-        $x->exam_image = $value['exam_image'];}
+                $x->exam_image = $value['exam_image'];
+            }
     }
  
-
-
      $x->update($id);
         header("location:MCQuiz.php");   
     }
@@ -61,7 +62,6 @@ $x->category_name  = $_POST['categoryname'];
                                         </div>
                                         <hr>
                                         <form action="" method="post" enctype="multipart/form-data">
-                                            <?php foreach ($data as $value) {?>
                                    
                                             <div class="form-group has-success">
                                                 <label for="cc-name" class="control-label mb-1">Write  Question</label>
@@ -117,39 +117,58 @@ $x->category_name  = $_POST['categoryname'];
                                                     autocomplete="cc-number" value="<?= $value['correct_answer'];?>">
                                                 <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                             </div>
-                                            
+                                           
                                             <div class="form-group">
                                                 <label for="cc-number" class="control-label mb-1">Choose Category</label><br>
-                                               <select class="form-group" id="cc-number" style="width:100%" name="categoryname" value="<?= $value['category_name'];?>">    
-                                               <?php
-    $products = $x->readcategory(); 
-    foreach ($products as $product) { 
-        $i=$product['course_name'];
-        echo "<option value='$i'";
-        if($product['course_id']==$product['course_id']){
-             echo "selected";
-                echo">";
-                echo $product['course_name'];
-                echo"</option>";
-      }
-    else{
-               echo "<option value='$i'>";
-                echo $product['course_name'];
-                 echo"</option>";
-    }
-    
-    }
+                                               <select class="form-group" id="cc-number" 
+                                               style="width:100%" name="categoryname">
+ 
+                                                <?php
+                                                echo"
+                                                   <option select='selected'>
+                                                        {$value['category_name']}     
+                                                    </option>
+                                                ";
+
+                                                if ($d  = $x->view_course()) {
+                                                foreach ($d as $k => $v) {
+                                                echo"
+                                                     <option>
+                                                        {$v['course_name']}
+                                                     </option>
+                                                 ";
+
+                                                    }
+                                                } 
+                                                
+                                                ?>
+
+
+
+                                                <?php                                                 
+                                                    
+
+                                                    //    $products = $x->readcategory(); 
+                                                    //     foreach ($products as $product) { 
+                                                    //     $i=$product['course_name'];
+                                                    //     echo "<option value='$i'";
+                                                    //     if($product['course_id']==$product['course_id']){
+                                                    //          echo "selected";
+                                                    //             echo">";
+                                                    //             echo $product['course_name'];
+                                                    //             echo"</option>";
+                                                    //   }
+                                                    // else{
+                                                    //     echo "<option value='$i'>";
+                                                    //     echo $product['course_name'];
+                                                    //     echo"</option>";
+                                                    // }
+                                                    
+                                                    // }
                                                  ?>     
                                                 </select>
                                                 <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                             </div>
-                                            
-                                            <div class="row">
-                                        
-                                         
-                                            </div>
-                                            <?php } ?>
-
                                             <div>
                                                 <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block" name="submit">
                                                     <span id="payment-button-amount">Update</span>

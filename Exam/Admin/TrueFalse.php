@@ -135,8 +135,7 @@ echo '<meta http-equiv="refresh" content="0">';
                                 echo "<td>{$value['question']}</td>";
                                 echo "<td>{$value['Correct_answer']}</td>";
                                 echo "<td>{$value['Incorrect_Answer']}</td>";
-                                echo "<td>{$value['exam_image']}</td>";
-                            
+                                echo "<td><img src='images/{$value['exam_image']}' width='150' height='150'></td>";
                                 echo "<td><a href='update_TrueFalse.php?id={$value['id']}' class='btn btn-primary'>Edit</a></td>";
                                 echo "<td><a href='delete_TrueFalse.php?id={$value['id']}' class='btn btn-danger'>Delete</a></td>";
                                 echo "</tr>";                               

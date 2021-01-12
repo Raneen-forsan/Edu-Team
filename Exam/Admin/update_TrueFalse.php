@@ -11,22 +11,30 @@ include('classes/class_QuizTF.php');
 
    if(isset($_POST['submit']))
     {
-        $x->Nquestion   = $_POST['Nquestion'];
-        $x->Cquestion   = $_POST['Cquestion'];
-        $x->Iquestion   = $_POST['Iquestion'];
+        $x->Nquestion      = $_POST['Nquestion'];
+        $x->Cquestion      = $_POST['Cquestion'];
+        $x->Iquestion      = $_POST['Iquestion'];
+        $x->category_name  = $_POST['category_name'];
 
-  
+  if ($_FILES['exam_image']['name'] != ""){
+        $x->exam_image               = $_FILES['exam_image']['name'];
+        $temp_name                   = $_FILES['exam_image']['tmp_name'];
+        $path                        = "images/";
 
-        $x->exam_image  = $_FILES['exam_image']['name'];
-        $tmp_name       = $_FILES['exam_image']['tmp_name'];
-        $path           = 'images/';
-        
-        move_uploaded_file($tmp_name,$path.$x->exam_image);
+        move_uploaded_file($temp_name,$path.$x->exam_image);      
+    }else
+       {
+           foreach ($data as $value) {
+           $x->exam_image = $value['exam_image'];
 
+       }
+
+
+        }
         $x->update($id);
 
         header("location:TrueFalse.php");   
-    }
+   }
 
     include('include/header.php');
 
@@ -77,6 +85,8 @@ include('classes/class_QuizTF.php');
                                              
                                                 <div class="form-group">
                                                 <label for="cc-number" class="control-label mb-1">Upload Your Question</label>
+                                                <br>
+                                                <?php echo "<img name='exam_image' src='images/{$value['exam_image']}' width='90px'>" ?>
                                                 <input id="cc-number" name="exam_image" type="file" class="form-control cc-number identified visa" value="" data-val="true"
                                                     data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number"
                                                     autocomplete="cc-number">
@@ -84,7 +94,7 @@ include('classes/class_QuizTF.php');
                                             </div>
                                                 <div class="form-group">
                                                 <label for="cc-number" class="control-label mb-1">Choose Category</label><br>
-                                               <select id="cc-number" name="" 
+                                               <select id="cc-number" name="category_name" 
                                                style="width:100%;height:30px;">
                                                     <?php
                                                        $data=$x->readcourse();

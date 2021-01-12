@@ -10,13 +10,13 @@ if(isset($_POST['submit']))
 
 {
    
-$x->Nquestion   = $_POST['Nquestion'];
-$x->Cquestion   = $_POST['Cquestion'];
-$x->Iquestion   = $_POST['Iquestion'];
-
-$x->exam_image  = $_FILES['exam_image']['name'];
-$tmp_name       = $_FILES['exam_image']['tmp_name'];
-$path           = "images/";
+$x->Nquestion     = $_POST['Nquestion'];
+$x->Cquestion     = $_POST['Cquestion'];
+$x->Iquestion     = $_POST['Iquestion'];
+$x->category_name = $_POST['category_name'];
+$x->exam_image    = $_FILES['exam_image']['name'];
+$tmp_name         = $_FILES['exam_image']['tmp_name'];
+$path             = "images/";
 move_uploaded_file($tmp_name,$path.$x->exam_image);
 
 $x->create();
@@ -74,7 +74,7 @@ echo '<meta http-equiv="refresh" content="0">';
                                             </div>
                                                 <div class="form-group">
                                                 <label for="cc-number" class="control-label mb-1">Choose Category</label><br>
-                                               <select id="cc-number" name="cc-number" style="width:100%;height:30px;">
+                                               <select id="cc-number" name="category_name" style="width:100%;height:30px;">
                                                 <?php
 
                                                 $data = $x->readcourse();
@@ -114,6 +114,7 @@ echo '<meta http-equiv="refresh" content="0">';
                                 <th>question</th>
                                 <th>Correct_answer</th>
                                 <th>Incorrect_Answer</th>
+                                <th>category_name</th>
                                 <th>exam_image</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
@@ -135,6 +136,7 @@ echo '<meta http-equiv="refresh" content="0">';
                                 echo "<td>{$value['question']}</td>";
                                 echo "<td>{$value['Correct_answer']}</td>";
                                 echo "<td>{$value['Incorrect_Answer']}</td>";
+                                echo "<td>{$value['category_name']}</td>";
                                 echo "<td><img src='images/{$value['exam_image']}' width='150' height='150'></td>";
                                 echo "<td><a href='update_TrueFalse.php?id={$value['id']}' class='btn btn-primary'>Edit</a></td>";
                                 echo "<td><a href='delete_TrueFalse.php?id={$value['id']}' class='btn btn-danger'>Delete</a></td>";

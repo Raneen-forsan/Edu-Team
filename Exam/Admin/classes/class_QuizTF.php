@@ -7,14 +7,17 @@ class QuizTF extends dbconnection{
 	public $Nquestion;
 	public $Cquestion;
     public $Iquestion;
+    public $category_name;
     public $exam_image;
+
  
 
 
 	public function create()
 	{
-	$query = "INSERT INTO QuizTF(question,Correct_answer,Incorrect_Answer,exam_image)
-				  VALUES('$this->Nquestion','$this->Cquestion','$this->Iquestion','$this->exam_image')";
+	$query = "INSERT INTO QuizTF(  
+	              question,Correct_answer,Incorrect_Answer,category_name,exam_image)
+				  VALUES('$this->Nquestion','$this->Cquestion','$this->Iquestion','$this->category_name','$this->exam_image')";
 		$this->performQuery($query);
 	}
 
@@ -39,6 +42,7 @@ class QuizTF extends dbconnection{
 		$query = "UPDATE QuizTF SET question              = '$this->Nquestion',
 								    Correct_answer        = '$this->Cquestion',
 								    Incorrect_Answer      = '$this->Iquestion',
+								    category_name         = '$this->category_name',
 								    exam_image            = '$this->exam_image'
 								    WHERE id              =  $id";
 		$this->performQuery($query);

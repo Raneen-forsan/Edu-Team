@@ -17,6 +17,7 @@ $x->category_name = $_POST['category_name'];
 $x->exam_image    = $_FILES['exam_image']['name'];
 $tmp_name         = $_FILES['exam_image']['tmp_name'];
 $path             = "images/";
+$x->exam_id       = $_POST['examid'];
 move_uploaded_file($tmp_name,$path.$x->exam_image);
 
 $x->create();
@@ -88,6 +89,24 @@ echo '<meta http-equiv="refresh" content="0">';
                                                 <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                                
                                             </div>
+                                                <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1"> Exam Name</label><br>
+                                               <select class="form-group" id="cc-number" style="width:100%" name="examid">    
+                                               <?php  
+                                              /* if($data = $x->readexam()){
+                                               foreach ($data as $key => $value) {
+                                               echo " <option>{$value['exam_id']}</option>" ;}}*/
+                                                   
+                                            $exams = $x->readexam(); 
+                                            foreach ($exams as $category) {        
+                                            $i=$category['exam_id'];
+                                            echo "<option value='$i'>{$category['exam_name']}</option>";}
+                                              ?>
+                                                   
+                                                     
+                                                </select>
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                              </div>
 
                                             <div class="row">
                                         
@@ -111,11 +130,12 @@ echo '<meta http-equiv="refresh" content="0">';
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>question</th>
-                                <th>Correct_answer</th>
-                                <th>Incorrect_Answer</th>
-                                <th>category_name</th>
-                                <th>exam_image</th>
+                                <th>Question</th>
+                                <th>Correct Answer</th>
+                                <th>Incorrect Answer</th>
+                                <th>Category </th>
+                                <th> Name</th>
+                                <th> Image</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
@@ -137,6 +157,7 @@ echo '<meta http-equiv="refresh" content="0">';
                                 echo "<td>{$value['Correct_answer']}</td>";
                                 echo "<td>{$value['Incorrect_Answer']}</td>";
                                 echo "<td>{$value['category_name']}</td>";
+                                echo "<td>{$value['exam_name']}</td>";
                                 echo "<td><img src='images/{$value['exam_image']}' width='150' height='150'></td>";
                                 echo "<td><a href='update_TrueFalse.php?id={$value['id']}' class='btn btn-primary'>Edit</a></td>";
                                 echo "<td><a href='delete_TrueFalse.php?id={$value['id']}' class='btn btn-danger'>Delete</a></td>";

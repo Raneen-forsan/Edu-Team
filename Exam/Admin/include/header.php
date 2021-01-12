@@ -105,6 +105,7 @@
                             <a href="manager_admin.php">
                                 <i class="fas fa-chart-bar"></i>Create Admin</a>
                         </li>
+                        
                         <li>
                             <a href="createCousre.php">
                                 <i class="fas fa-table"></i>Create Course</a>
@@ -113,6 +114,15 @@
                             <a href="ManageQuiz.php">
                                 <i class="far fa-check-square"></i>Create Exam</a>
                         </li>
+                          <li>
+                            <a href="editdeleteexaminterface.php">
+                                <i class="far fa-check-square"></i>Delete Exam </a>
+                        </li>
+                           <li>
+                            <a href="editdeleteexaminterface.php">
+                                <i class="far fa-check-square"></i>Update Exam </a>
+                        </li>
+                     
                         <li>
                             <a href="student.php">
                                 <i class="fas fa-calendar-alt"></i>Students</a>

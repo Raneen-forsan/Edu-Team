@@ -17,7 +17,10 @@ if (isset($_POST['submit'])) {
     $x->tmp_name        = $_FILES['exam_image']['tmp_name'];
     $x->path            = 'images_website/';
     move_uploaded_file($x->tmp_name,$x->path.$x->exam_image);
+    $x->exam_id=$_POST['examid'];
     $x->create();
+     echo '<meta http-equiv="refresh" content="0">';
+
 }
 
 include('include/header.php');
@@ -94,10 +97,25 @@ include('include/header.php');
                                                foreach ($data as $key => $value) {
                                               echo " <option>{$value['course_name']}</option>" ;}}
                                                    
+                                           
                                                 ?>     
                                                 </select>
                                                 <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
                                             </div>
+                                            
+                                                <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">Choose Exam Name</label><br>
+                                               <select class="form-group" id="cc-number" style="width:100%" name="examid">    
+                                               <?php  
+                                             $exams = $x->readexam(); 
+                                             foreach ($exams as $category) {        
+                                             $i=$category['exam_id'];
+                                             echo "<option value='$i'>{$category['exam_name']}</option>";}
+                                                   
+                                                ?>     
+                                                </select>
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                              </div>
                                             
                                             <div class="row">
                                         
@@ -127,7 +145,6 @@ include('include/header.php');
                     <table class="table table-borderless table-data3">
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>Question</th>
                                 <th>one</th>
                                 <th>two</th>
@@ -135,6 +152,7 @@ include('include/header.php');
                                 <th>four</th>
                                 <th>answer</th>
                                 <th>Course</th>
+                                <th>Exam Name</th>
                                 <th>Image</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
@@ -149,7 +167,6 @@ include('include/header.php');
                                 if($data = $x->readAll()){
                                 foreach ($data as $key => $value) {
                                     echo "<tr>";
-                                    echo "<td>{$value['Question_id']}</td>";
                                     echo "<td>{$value['Question']}</td>";
                                     echo "<td>{$value['choice_one']}</td>";
                                     echo "<td>{$value['choice_two']}</td>";
@@ -157,6 +174,7 @@ include('include/header.php');
                                     echo "<td>{$value['choice_four']}</td>";
                                     echo "<td>{$value['correct_answer']}</td>";
                                     echo "<td>{$value['category_name']}</td>";
+                                    echo "<td>{$value['exam_name']}</td>";
                                     echo "<td><img src='images/{$value['exam_image']}' width='150' height='150'></td>";
                                     echo "<td><a href='updatequestion.php?id={$value['Question_id']}' class='btn btn-primary'>Edit</a></td>";
                                    echo "<td><a href='deletequestion.php?id={$value['Question_id']}'

@@ -13,14 +13,15 @@
 
 		public function CreateStudent(){
 			$query  = "INSERT INTO student(email,full_name,password,mobile,image,education_level) 
-			VALUES('$this->email','$this->full_name','$this->password','$this->mobile','$this->image','$this->education_level') ";
+			VALUES('$this->email','$this->full_name','$this->password','$this->mobile','$this->image',
+			'$this->education_level') ";
 			$this->performQuery($query);
 		} 
 
 		public function ReadStudentInformation(){
 			$query  = "SELECT * FROM student";
 			$result = $this->performQuery($query);
-			return $this->fetchAll($result);
+			return    $this->fetchAll($result);
 		}
 
 		public function DeleteStudent(){
@@ -44,7 +45,7 @@
 		public function SelectUpdateStudent(){
 			$query  = "SELECT * FROM student WHERE student_id = '$this->id' ";
 			$result = $this->performQuery($query);
-			return $this->fetchAll($result);
+			return    $this->fetchAll($result);
 		}
 
 		

@@ -2,6 +2,7 @@
 include('classes/class_student.php');
 
 $x = new student();
+
 if (isset($_POST['sub'])) {
     $x->email               = $_POST['email'];
     $x->full_name           = $_POST['fullname'];

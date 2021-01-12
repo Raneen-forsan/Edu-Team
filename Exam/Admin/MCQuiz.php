@@ -158,7 +158,7 @@ include('include/header.php');
                                     echo "<td>{$value['correct_answer']}</td>";
                                     echo "<td>{$value['category_name']}</td>";
                                     echo "<td><img src='images/{$value['exam_image']}' width='150' height='150'></td>";
-                                    echo "<td><a href='updatequestion.php ?id={$value['Question_id']}' class='btn btn-primary'>Edit</a></td>";
+                                    echo "<td><a href='updatequestion.php?id={$value['Question_id']}' class='btn btn-primary'>Edit</a></td>";
                                    echo "<td><a href='deletequestion.php?id={$value['Question_id']}'
                                    class='btn btn-danger'>Delete</a></td>";                               
                                                             

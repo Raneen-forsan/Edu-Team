@@ -1,11 +1,12 @@
 
-<?php session_start();
-
-    require('classes/login_class.php');
-
+<?php 
+	require('classes/login_class.php');
+	
+	session_start();
+   
+    $x = new login();
     
-    $x=new login();
-    if(isset($_SESSION['email'])){
+	if(isset($_SESSION['email'])){
         header("location:index.php");
     } 
 

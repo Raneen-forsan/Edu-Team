@@ -1,7 +1,6 @@
-<?php include(../includes/DBconnection.php);?>
-
 <?php
-
+	include('../academics-master/includes/DBconnection.php');
+	
     class login extends dbconnection{
         public $email;
         public $password;
@@ -12,6 +11,6 @@
 			return 	  $this->fetchAll($result);	
     }
 
-
+}
 
 ?>

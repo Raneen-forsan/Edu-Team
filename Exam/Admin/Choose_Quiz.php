@@ -9,10 +9,10 @@
     	<h2>Choose Quiz</h2>
     </div>
     <div class="d-flex justify-content-center py-5">
-  		<a href="MCQuiz.php">
+  		<a href="exam_info.php">
    			<button type="button" class="btn btn-outline-primary pl-5 pr-5 mr-2">Multiple Choice</button>
 		</a>
-	    <a href="TrueFalse.php">
+	    <a href="exam_info.php">
 	     	<button type="button" class="btn btn-primary pl-3 pr-3 mr-2">True False Qusetion </button>
 	    </a>
 	</div>

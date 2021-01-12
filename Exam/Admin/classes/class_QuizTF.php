@@ -9,22 +9,27 @@ class QuizTF extends dbconnection{
     public $Iquestion;
     public $category_name;
     public $exam_image;
-
+    public $exam_id; 
  
 
 
 	public function create()
 	{
 	$query = "INSERT INTO QuizTF(  
-	              question,Correct_answer,Incorrect_Answer,category_name,exam_image)
-				  VALUES('$this->Nquestion','$this->Cquestion','$this->Iquestion','$this->category_name','$this->exam_image')";
+	              question,Correct_answer,Incorrect_Answer,category_name,exam_image,exam_id)
+				  VALUES('$this->Nquestion','$this->Cquestion','$this->Iquestion','$this->category_name','$this->exam_image','$this->exam_id')";
 		$this->performQuery($query);
 	}
 
 	public function readAll(){
-		$query  = "SELECT * FROM QuizTF";
+        $query  = "SELECT * FROM exam,QuizTF where exam.exam_id=QuizTF.exam_id";
 		$result = $this->performQuery($query);
 		return $this->fetchAll($result);
+	}
+   	public function readexam(){
+		$query  = "SELECT * FROM exam";
+		$result = $this->performQuery($query);
+		return    $this->fetchAll($result);
 	}
 	public function readcourse(){
 		$query  = "SELECT * FROM course";

@@ -1,7 +1,4 @@
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 <?php include('classes/courseClass.php');?>
 <?php
 
@@ -12,14 +9,12 @@
      if(isset($_POST['save'])){
         $x->coursename = $_POST['course_name'];
         $x->coursedesc = $_POST['course_description'];
-<<<<<<< Updated upstream
         $x->updateData($id);
         header("location:createCousre.php");
     }
 
     include('include/header.php');
     ?>
-=======
         $x->updateData($_GET['id']);
 
         header("location:createCousre.php");
@@ -29,7 +24,6 @@
      <?php include('include/header.php');?>
 
     
->>>>>>> Stashed changes
     <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">

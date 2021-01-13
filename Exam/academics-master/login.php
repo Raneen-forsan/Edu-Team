@@ -18,12 +18,13 @@
          if($check){
             $_SESSION['email']      = $x->email;
 
-            $_SESSION['password']   = $check[0]['password'];
+            $_SESSION['password']   = $x->password;
             header("location:index.php"); 
          }else{
             $error = "User Not Found";
+            
         }
-        echo '<meta http-equiv="refresh" content="0">';
+        // echo '<meta http-equiv="refresh" content="0">';
     }
 
     
@@ -32,7 +33,7 @@
 <html lang="en">
 
 <head>
-  <title>Academics &mdash; Website by Colorlib</title>
+  <title>Academics</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -147,7 +148,7 @@
           <div class="row align-items-end justify-content-center text-center">
             <div class="col-lg-7">
               <h2 class="mb-0">Login</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+              <p></p>
             </div>
           </div>
         </div>
@@ -156,7 +157,7 @@
 
     <div class="custom-breadcrumns border-bottom">
       <div class="container">
-        <a href="index.html">Home</a>
+        <a href="index.php">Home</a>
         <span class="mx-3 icon-keyboard_arrow_right"></span>
         <span class="current">Login</span>
       </div>
@@ -164,21 +165,21 @@
 
     <div class="site-section">
         <div class="container">
-
+      
 
             <div class="row justify-content-center">
                 <div class="col-md-5">
                     <div class="row">
-                        <form action="login.php" method="POST">
-                        <div class="col-md-12 form-group">
+                     <form action="login.php" method="POST">
+                      <div class="col-md-12 form-group">
                         <?php
-                             if(isset($error)) {
+                         if (isset($error)) {
                               echo"<div class='alert alert-danger' role='alert'>
-                              {$error}
-                            </div>
-                               ";
+                                  {$error}
+                                   </div>
+                                      ";
                                         }
-                        ?>
+                                    ?>
                             <label for="username">Email</label>
                             <input type="text" name="email" id="username"  class="form-control form-control-lg">
                         </div>

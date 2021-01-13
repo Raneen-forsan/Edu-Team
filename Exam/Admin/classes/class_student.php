@@ -37,8 +37,7 @@
 										mobile 				= '$this->mobile',
 										image 				= '$this->image',
 										education_level		= '$this->education_level'
-					 WHERE student_id = '$this->id'
-			"; 
+					 WHERE student_id = '$this->id' "; 
 			$this->performQuery($query);
 		}
 

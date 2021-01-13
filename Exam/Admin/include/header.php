@@ -66,7 +66,11 @@
             <nav class="navbar-mobile">
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
-                        
+                        <li>
+                            <a href="dashboard.php">
+                                <i class="fas fa-chart-bar"></i>Dashboard</a>
+                        </li>
+
                         <li>
                             <a href="manager_admin.php">
                                 <i class="fas fa-chart-bar"></i>Create Admin</a>
@@ -100,6 +104,10 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
+                        <li>
+                            <a href="dashboard.php">
+                                <i class="fas fa-chart-bar"></i>Dashboard</a>
+                        </li>
                        
                         <li>
                             <a href="manager_admin.php">
@@ -312,4 +320,5 @@
                 </div>
             </header>
             <!-- HEADER DESKTOP-->
+        
         

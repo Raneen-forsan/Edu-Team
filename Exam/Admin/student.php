@@ -77,8 +77,8 @@ include('include/header.php');
                                         <option>High School Diploma</option>
                                         <option>Some College</option>
                                         <option>Associate Degree</option>
-                                        <option>Bachelor's Degree</option>
-                                        <option>Master's Degree Or Higher</option>
+                                        <option>Masters Degree Or Higher</option>
+                                        <option>Bachelors Degree</option>
                                     </select>
 
                                     <span class="help-block" data-valmsg-for="cc-number"

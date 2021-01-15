@@ -1,3 +1,8 @@
+<?php
+include('includes/DBconnection.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -111,8 +116,59 @@
 
     </header>
 
+    <div class="row m-t-30">
+      <div class="col-md-12">
+          <!-- DATA TABLE-->
+          <br>
+          <div class="table-responsive m-b-40 mt-5">
+              <table class="table table-borderless table-data3 mt-5">
+                  <thead>
+                      <tr>
+                          <th>Exam Name</th>
+                          <th>Exam Description</th>
+                          <th>Number of Questions</th>
+                          <th>Choose</th>
+                          
+                      </tr>
+                  </thead>
+                  <tbody>
+              
+                 <tbody>
+                  
+                  <?php
+                      
+                      $x=new dbconnection();
+                      $query  = "SELECT * FROM exam";
+                      $row= $x->performQuery($query);
+
+                      
+                      $result=$x->fetchAll($row);
+
+
+                      foreach($result as $value)
+                      {
+                          echo "<tr>";
+                          echo "<td>".$value['exam_name']."</td>";
+                          echo "<td>".$value['exam_description']."</td>";
+                          echo "<td></td>";
+                          echo "<td><a href='exam.php?id={$value['exam_id']}' class='btn btn-danger'>Select</a></td>";
+                          echo "</tr>";                               
+                       
+                        }
+
+
+
+                    ?>
+                  </tbody>
+              </table>
+          </div>
+          <!-- END DATA TABLE-->
+      </div>
+  </div>
+</div>
     
-    <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('images/bg_1.jpg')">
+    
+    <!-- <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('images/bg_1.jpg')">
         <div class="container">
           <div class="row align-items-end">
             <div class="col-lg-7">
@@ -167,7 +223,7 @@
                     </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="section-bg style-1" style="background-image: url('images/hero_1.jpg');">
         <div class="container">

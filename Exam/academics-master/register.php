@@ -162,7 +162,15 @@
             <div class="row justify-content-center">
                 <div class="col-md-5">
                     <div class="row">
-                    <form action="register.php" method="POST" enctype="multipart/form-data">
+                    <?php
+                         if (isset($error)) {
+                              echo"<div class='alert alert-danger' role='alert' width='500'>
+                                  {$error}
+                                  </div>
+                                    ";
+                                        }
+                                    ?>
+                    <form action="register.php" method="POST" enctype="multipart/form-data" >
                         <div class="col-md-12 form-group">
                             
                             <label for="username">Full Name</label>
@@ -174,11 +182,12 @@
                         </div>
                         <div class="col-md-12 form-group">
                             <label for="pword">Password</label>
-                            <input type="password" name="password" id="pword" class="form-control form-control-lg">
+                            <input type="password" name="password"  class="form-control form-control-lg" required>
+                            <div class="help-block">Minimum of 6 characters</div>
                         </div>
                         <div class="col-md-12 form-group">
                             <label for="pword2">Re-type Password</label>
-                            <input type="password" name="password1" id="pword2" class="form-control form-control-lg">
+                            <input type="password" name="password1"  class="form-control form-control-lg" required>
                             
                         </div>
                         <div class="col-md-12 form-group">

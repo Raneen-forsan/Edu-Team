@@ -8,6 +8,6 @@ $id=$_GET['id'];
 
 $x->delete($id);
 
-header("location:TrueFalse.php");   
+header("location:ManageQuiz.php");   
 
 ?>

@@ -1,5 +1,7 @@
 <?php
-include('includes/DBconnection.php');
+include('classes/classes.php');
+
+$x = new classesallfunction();
 ?>
 
 
@@ -96,7 +98,8 @@ include('includes/DBconnection.php');
                 <li>
                     <a href="contact.html" class="nav-link text-left">Contact</a>
                   </li>
-              </ul>                                                                                                                                                                                                                                                                                          </ul>
+              </ul>                                                                                             
+            </ul>
             </nav>
 
           </div>
@@ -136,16 +139,9 @@ include('includes/DBconnection.php');
                  <tbody>
                   
                   <?php
-                      
-                      $x=new dbconnection();
-                      $query  = "SELECT * FROM exam";
-                      $row= $x->performQuery($query);
+                      $result = $x->ReadExam();
 
-                      
-                      $result=$x->fetchAll($row);
-
-
-                      foreach($result as $value)
+                      foreach($result as $key => $value)
                       {
                           echo "<tr>";
                           echo "<td>".$value['exam_name']."</td>";

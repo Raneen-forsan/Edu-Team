@@ -1,13 +1,7 @@
 <?php
-include('includes/DBconnection.php');
-
-
-$x = new dbconnection();
-$query  = "SELECT * FROM QuizTF";
-$row = $x->performQuery($query);
-$result = $x->fetchAll($row);
-
-
+include('classes/classes.php');
+    $x = new classesallfunction();
+    $result = $x->ReadQuestion();
 ?>
 
 <!doctype html>
@@ -237,7 +231,7 @@ $result = $x->fetchAll($row);
         <?php
         $key = 1;
         $count = count($result);
-        foreach ($result as  $value) { ?>
+        foreach ($result as $k => $value) { ?>
             <div class="wrap <?= ($key == 1) ? 'active-q' : 'hide-class' ?>" id="<?= $key ?>">
                 <div class="text-center pb-4">
                     <div class="h5 font-weight-bold"><span id="number"> </span><?= $key ?> of <?= $count ?> </div>
@@ -255,7 +249,6 @@ $result = $x->fetchAll($row);
                     <?php } ?>
                     <button class="btn btn-primary" <?= ($key == $count) ? '' : 'onclick="next();"' ?> id="next"><?= ($key == $count) ? 'Submit' : 'Next <span class="fas fa-arrow-right"></span>' ?> </button>
                 </div>
-
             </div>
         <?php $key++;
         } ?>

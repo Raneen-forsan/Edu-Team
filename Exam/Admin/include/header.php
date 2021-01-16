@@ -79,14 +79,6 @@
                             <a href="createCousre.php">
                                 <i class="fas fa-table"></i>Create Course</a>
                         </li>
-                        <li>
-                            <a href="ManageQuiz.php">
-                                <i class="far fa-check-square"></i>Create Exam</a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
-                        </li>
                         
                     </ul>
                 </div>
@@ -121,16 +113,7 @@
                         <li>
                             <a href="ManageQuiz.php">
                                 <i class="far fa-check-square"></i>Create Exam</a>
-                        </li>
-                          <li>
-                            <a href="editdeleteexaminterface.php">
-                                <i class="far fa-check-square"></i>Delete Exam </a>
-                        </li>
-                           <li>
-                            <a href="editdeleteexaminterface.php">
-                                <i class="far fa-check-square"></i>Update Exam </a>
-                        </li>
-                     
+                        </li>               
                         <li>
                             <a href="student.php">
                                 <i class="fas fa-calendar-alt"></i>Students</a>

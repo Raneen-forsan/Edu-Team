@@ -33,7 +33,7 @@ include('classes/class_QuizTF.php');
         }
         $x->update($id);
 
-        header("location:TrueFalse.php");   
+        header("location:ManageQuiz.php");   
    }
 
     include('include/header.php');

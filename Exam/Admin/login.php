@@ -23,10 +23,6 @@
         }else{
             $error = "User Not Found";
         }
-
-        // foreach ($printer as $key => $value) {
-        //     $value[''];   
-        // }
     }
 
 

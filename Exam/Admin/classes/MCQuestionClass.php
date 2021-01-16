@@ -3,20 +3,21 @@ require('include/DBconnection.php');
 
 class McQuestion extends dbconnection{
 
-    public $Question;
-	public $choice_one;
-    public $choice_two;
-    public $choice_three;
-    public $choice_four;
-    public $correct_answer;
-    public $category_name;
+	
+
+    public $question;
+    public $id;
+    public $Cquestion;
+    public $Cquestion1;
+    public $c1;
+    public $c2;
+    public $c3;
+    public $c4;
+    public $correct_a;
+    public $mark;
     public $exam_image;
-    public $tmp_name;
-    public $path;
-    public $Question_id;
-    public $exam_id;
-    public $exam_name;
-    public $exam_description;
+    public $course_id ;
+    
 public function create(){
 
 			$query = "INSERT INTO mcquiz(Question,choice_one,choice_two,choice_three,choice_four,
@@ -26,12 +27,16 @@ public function create(){
 					 		'$this->exam_image','$this->exam_id')";
 			$this->performQuery($query);           
 	}
+    
 public function create_exam(){
 
 			$query = "INSERT INTO exam(exam_name,exam_description)
 					 VALUES('$this->exam_name','$this->exam_description')";
 			$this->performQuery($query);           
 	}
+    /*$query = "SELECT * FROM questions";
+$total_questions = mysqli_num_rows(mysqli_query($connection,$query));*/
+    
 	public function readAll(){
 		$query  = "SELECT * FROM exam,mcquiz where exam.exam_id=mcquiz.exam_id";
 		$result = $this->performQuery($query);
@@ -42,7 +47,17 @@ public function create_exam(){
 		$result = $this->performQuery($query);
 		return    $this->fetchAll($result);
 	}
-	
+    	public function readmcquiz(){
+		$query  = "SELECT * FROM mcquiz";
+		$result = $this->performQuery($query);
+		return    $this->fetchAll($result);
+	}
+
+    public function ReadNumQuestion(){
+			$query 	= "SELECT Question_id ,COUNT(Question_id) AS num_Question FROM mcquiz";
+			$result = $this->performQuery($query);
+			return $this->fetchAll($result);
+		}
     public function readcategory(){
 		$query  = "SELECT * FROM course";
 		$result = $this->performQuery($query);
@@ -52,7 +67,7 @@ public function create_exam(){
 
 
 	public function readById($id){
-		$query  = "SELECT * FROM  mcquiz WHERE Question_id = '$id' ";
+		$query  = "SELECT * FROM  quiztf WHERE id = '$id' ";
 		$result = $this->performQuery($query);
 		return    $this->fetchAll($result);	
 	}
@@ -62,16 +77,11 @@ public function create_exam(){
 		return    $this->fetchAll($result);	
 	}
 
-	public function update($id){ 
-		$query = "UPDATE mcquiz SET Question       = '$this->Question',
-								    choice_one     = '$this->choice_one',
-								    choice_two     = '$this->choice_two',
-								    choice_three   = '$this->choice_three',
-								    choice_four    = '$this->choice_four',
-								    correct_answer = '$this->correct_answer',
-								    category_name  = '$this->category_name',
-								    exam_image     = '$this->exam_image'
-								    WHERE Question_id   = $id";
+
+    	public function updateQuestion($id){ 
+		$query = "UPDATE quiztf SET question       = '$this->question',
+                                    
+								    WHERE id       = $id";
 		$this->performQuery($query);
 	}
     	public function update_exam($id){ 
@@ -81,7 +91,7 @@ public function create_exam(){
 		$this->performQuery($query);
 	}
 	public function delete($id){
-		$query = "DELETE FROM mcquiz WHERE Question_id = $id";
+		$query = "DELETE FROM quiztf WHERE id = $id";
 		$this->performQuery($query);
 	}
 public function delete_exam($id){

@@ -206,14 +206,16 @@ if(isset($_POST['submit'])){
                                         <td> {$value['c4']} </td>
                                         <td> {$value['correct_a']} </td>
                                         <td> {$value['mark']} </td>
-                                        <td> <img src='images_website/{$value['exam_image']}'></td>
-                                        <td>UPDATE</td>
-                                        <td>DELETE</td>
-                                    </tr>
-
-
-
-                                ";              
+                                        <td> <img src='images_website/{$value['exam_image']}'></td>"; 
+                                        
+                                         echo "<td><a href='update_question.php?id={$value['id']}' class='btn btn-primary'>Edit</a></td>";
+                                      echo "<td><a href='delete_question.php?id={$value['id']}'
+                                       class='btn btn-danger'>Delete</a></td>"; 
+                                        
+                                        echo "</tr>";
+                                        
+                            
+                                    
                             }
                       
                         }

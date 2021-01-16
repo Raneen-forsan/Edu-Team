@@ -1,10 +1,12 @@
 <?php
 include('classes/classes.php');
-    $x = new classesallfunction();
+    session_start();
+    $x      = new classesallfunction();
+    $x->id_url = $_GET['id'];
     $result = $x->ReadQuestion();
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -220,6 +222,11 @@ include('classes/classes.php');
         .hide-class {
             display: none;
         }
+
+        .imgquestion{
+            width: 470px !important;
+            height: 150px !important;
+        }
     </style>
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
@@ -228,31 +235,75 @@ include('classes/classes.php');
 
 <body oncontextmenu='return false' class='snippet-body'>
     <div class="wrapper">
+        <form>
         <?php
         $key = 1;
         $count = count($result);
         foreach ($result as $k => $value) { ?>
-            <div class="wrap <?= ($key == 1) ? 'active-q' : 'hide-class' ?>" id="<?= $key ?>">
+
                 <div class="text-center pb-4">
                     <div class="h5 font-weight-bold"><span id="number"> </span><?= $key ?> of <?= $count ?> </div>
                 </div>
-                <div class="h4 font-weight-bold "> <?= $key ?>. <?= $value['question'] ?>?</div>
-                <div class="pt-4">
-                    <form>
-                        <label class="options"><?= $value['Correct_answer'] ?> <input type="radio" name="radio"> <span class="checkmark"></span> </label>
-                        <label class="options"><?= $value['Incorrect_Answer'] ?> <input type="radio" name="radio"> <span class="checkmark"></span> </label>
-                    </form>
+                <?php if($value['question'] == ""){ ?>
+                    <div class="h4 font-weight-bold "> 
+                    <?= $key ?>. <?="<img class='imgquestion' src='../Admin/images_website/{$value['exam_image']}'>" ?></div>
+                <?php 
+                    }else{
+                ?>
+                <div class="h4 font-weight-bold "> <?= $key ?>. <?=$value['question'] ?>?</div>
+               <?php 
+                    } 
+                ?>
+            <div class="pt-4">
+                    <?php
+                        if ($value['Cquestion'] == "") {
+                    ?>
+            <label class="options"><?=$_SESSION['cq1']=$value['c1'] ?> <input type="radio" 
+                name="$k"> 
+                <span class="checkmark"></span> 
+            </label>
+                <label class="options"><?=$_SESSION['cq2']=$value['c2'] ?> <input type="radio" name="$k"> 
+                <span class="checkmark">
+                </span> 
+                </label>
+
+                <label class="options"><?=$_SESSION['cq3']=$value['c3'] ?> <input type="radio" name="$k"> 
+                <span class="checkmark">
+                </span> 
+                </label>
+
+                <label class="options"><?=$_SESSION['cq4']=$value['c4'] ?> <input type="radio" name="$k"> 
+                <span class="checkmark">
+                </span> 
+                </label>
+
                 </div>
-                <div class="d-flex justify-content-end pt-2">
-                    <?php if ($key != 1) { ?>
-                        <button class="btn btn-primary mx-3" onclick="back()" id="back"> <span class="fas fa-arrow-left pr-1"></span>Previous </button>
-                    <?php } ?>
-                    <button class="btn btn-primary" <?= ($key == $count) ? '' : 'onclick="next();"' ?> id="next"><?= ($key == $count) ? 'Submit' : 'Next <span class="fas fa-arrow-right"></span>' ?> </button>
-                </div>
-            </div>
-        <?php $key++;
+    
+        <?php } else{?>
+
+            <label class="options"><?=$_SESSION['ct_f1'] = $value['Cquestion'] ?> <input type="radio" name="$k"> 
+                <span class="checkmark"></span> 
+            </label>
+                <label class="options"><?=$_SESSION['ct_f2'] = $value['Cquestion1'] ?> <input type="radio" name="$k"> <span class="checkmark"></span> </label>
+             
+        <?php 
+        }
+        ?>
+            
+        <?php
+            $k++;
+            $key++;
         } ?>
 
+        <div class="d-flex justify-content-end pt-2">       
+            <button class="btn btn-primary">
+                Submit
+                <span class="fas fa-arrow-right"></span> 
+            </button>
+        </div>
+    </form>
+</div> 
+</div>
 
     </div>
     <div class="d-flex flex-column align-items-center">

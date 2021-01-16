@@ -7,11 +7,11 @@ $x=new Admin();
 
 if (isset($_POST['submit'])) {
 
-$x->email     = $_POST['email'];
-$x->password  = $_POST['password'];
-$x->fullname  = $_POST['fullname'];
+    $x->email     = $_POST['email'];
+    $x->password  = $_POST['password'];
+    $x->fullname  = $_POST['fullname'];
 
-$x->create();
+    $x->create();
  
 }
 

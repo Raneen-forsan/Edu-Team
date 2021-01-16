@@ -2,6 +2,7 @@
 include('classes/classes.php');
 
 $x = new classesallfunction();
+
 ?>
 
 
@@ -119,6 +120,7 @@ $x = new classesallfunction();
 
     </header>
 
+<div class="container">
     <div class="row m-t-30">
       <div class="col-md-12">
           <!-- DATA TABLE-->
@@ -127,10 +129,9 @@ $x = new classesallfunction();
               <table class="table table-borderless table-data3 mt-5">
                   <thead>
                       <tr>
-                          <th>Exam Name</th>
-                          <th>Exam Description</th>
-                          <th>Number of Questions</th>
-                          <th>Choose</th>
+                          <th>Course Name</th>
+                          <th>Course Description</th>
+                          <th>Choice</th>
                           
                       </tr>
                   </thead>
@@ -139,18 +140,18 @@ $x = new classesallfunction();
                  <tbody>
                   
                   <?php
-                      $result = $x->ReadExam();
+                      $result = $x->ReadCourse();
 
                       foreach($result as $key => $value)
                       {
-                          echo "<tr>";
-                          echo "<td>".$value['exam_name']."</td>";
-                          echo "<td>".$value['exam_description']."</td>";
-                          echo "<td></td>";
-                          echo "<td><a href='exam.php?id={$value['exam_id']}' class='btn btn-danger'>Select</a></td>";
-                          echo "</tr>";                               
-                       
-                        }
+                        echo"
+                          <tr>
+                            <td>{$value['course_name']}</td>
+                            <td>{$value['course_description']}</td>
+                            <td><a href='exams.php?id={$value['course_id']}' class='btn btn-danger'>Start</a></td>
+                          </tr>
+                        ";
+                      }
 
 
 
@@ -161,6 +162,7 @@ $x = new classesallfunction();
           <!-- END DATA TABLE-->
       </div>
   </div>
+</div>
 </div>
     
     

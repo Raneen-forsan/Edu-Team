@@ -16,6 +16,12 @@
 			$result	= $this->performQuery($query);
 			return 	  $this->fetchAll($result);	
     } 
+        
+            public function formark(){
+			$query  = "SELECT * FROM info_student";
+			$result	= $this->performQuery($query);
+			return 	  $this->fetchAll($result);	
+    } 
              
    
         

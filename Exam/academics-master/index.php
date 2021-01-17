@@ -1,4 +1,3 @@
-<?php include('classes/register_class.php');?>
 
 
 <!DOCTYPE html>
@@ -81,7 +80,10 @@
                 <li class="has-children">
                   <a href="about.html" class="nav-link text-left">Profile</a>
                   <ul class="dropdown">
-                    <li><a href="profile.php">My Profile</a></li>
+                    <?php echo "<li><a href='profile.php'>";
+                      echo" My Profile";
+                      echo "</a>";
+                      echo "</li>"; ?>
                     <li><a href="course-single.php">My Exams</a></li>
                     <li><a href="about.html">Logout</a></li>
                   </ul>

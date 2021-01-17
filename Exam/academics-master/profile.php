@@ -1,11 +1,13 @@
-
-  
 <?php
     session_start();
-    include("classes/login_class.php");
-    
-   
+    if (!isset($_SESSION['email'])) {
+        header("location: login.php");
+    }
 
+?>
+  
+<?php
+    include("includes/connect.php");
 
 ?>
 
@@ -225,7 +227,17 @@
                                 <h6 class="mb-0">Mark</h6>
                               </div>
                               <div class="col-sm-9 text-secondary">
-                              <?php echo $_SESSION['full_name']; ?>   
+                              <?php     
+              $id=$_GET['id'];
+              $p=$_SESSION['student_id'];
+              $query="SELECT * FROM info_student where student_id  ='$p'";
+              $result=mysqli_query($con,$query);
+             while($row=mysqli_fetch_assoc($result)){
+            
+         echo $row['mark_total'];
+                                                
+             } 
+                                  ?>   
                               </div>
                             </div>
                             <hr>

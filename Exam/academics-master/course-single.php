@@ -10,10 +10,16 @@
 
 <?php
 include('classes/classes.php');
-
 $x = new classesallfunction();
 
 ?>
+<?php
+$z=$x->idforstudent();
+foreach($z as $value){
+    
+}
+
+ ?>
 
 
 <!DOCTYPE html>
@@ -96,7 +102,10 @@ $x = new classesallfunction();
                 <li class="has-children">
                   <a href="about.html" class="nav-link text-left">Profile</a>
                   <ul class="dropdown">
-                    <li><a href="profile.php">My Profile</a></li>
+                    <?php echo "<li><a href='profile.php?id={$value['student_id']}'>";
+                      echo" My Profile";
+                      echo "</a>";
+                      echo "</li>"; ?>
                   </ul>
                 </li>
                 <li>

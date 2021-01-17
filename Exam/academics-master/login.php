@@ -11,20 +11,21 @@
          $x->password   = $_POST['password'];
          
          $check=$x->VerifyLogin();
-         $z=$x->VerifyLogin();
          if($check){
             $_SESSION['email']      = $x->email;
-
             $_SESSION['password']   = $x->password;
              
         foreach($check as $value){
             $_SESSION['full_name']=$value['full_name'];
+            $_SESSION['student_id']=$value['student_id'];
             $_SESSION['mobile']=$value['mobile'];
             $_SESSION['education_level']=$value['education_level'];
             $_SESSION['image']=$value['image'];
         }
+             
+            
             header("location:course-single.php"); 
-         }else if($z){
+         }else {
             $error = "User Not Found";
             
         }}

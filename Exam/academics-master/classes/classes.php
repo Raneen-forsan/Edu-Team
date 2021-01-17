@@ -35,6 +35,11 @@ class classesallfunction extends dbconnection
 		$result = $this->performQuery($query);
 		return $this->fetchAll($result);
 	}
+    public function idforstudent(){
+		$query = "SELECT* FROM student";
+		$result = $this->performQuery($query);
+		return $this->fetchAll($result);
+	}
 
 	public function info_student(){
 		$query = "INSERT INTO info_student(mark_total,statues_student,student_id,course_id)

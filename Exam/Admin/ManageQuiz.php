@@ -18,9 +18,10 @@ if(isset($_POST['submit'])){
         $x->c4              = $_POST['c4'];
         $x->correct_a       = $_POST['correct_a'];
         $x->mark            = $_POST['mark'];
+        $x->course_name     = $_POST['course_name'];
+        $x->exam_name     = $_POST['exam_name'];
 
-
-        $x->course_name   = $_POST['course_name'];
+        
         $x->exam_image    = $_FILES['exam_image']['name'];
         $tmp_name         = $_FILES['exam_image']['tmp_name'];
         $path             = "images_website/";
@@ -30,7 +31,7 @@ if(isset($_POST['submit'])){
         foreach ($courssss_id as $key => $value) {
            $x->id_for_insert_course_id =  $value['course_id'];
         }
-
+        
         $x->create();
 
 
@@ -53,7 +54,13 @@ if(isset($_POST['submit'])){
                                         </div>
                                         <hr>
                                         <form action="" method="post" enctype="multipart/form-data" >
-                                         
+                                               <div class="form-group has-success">
+                                                <label for="cc-name" class="control-label mb-1">Add  Exam Name</label>
+                                                <input id="cc-name" name="exam_name" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card"
+                                                    autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
+                                                <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
+                                            </div>
+                                            
                                             <div class="form-group has-success">
                                                 <label for="cc-name" class="control-label mb-1">Add  Question</label>
                                                 <input id="cc-name" name="Nquestion" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card"

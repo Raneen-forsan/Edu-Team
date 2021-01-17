@@ -1,4 +1,14 @@
 <?php
+    session_start();
+    if (!isset($_SESSION['email'])) {
+        header("location: login.php");
+    }
+
+?>
+
+
+
+<?php
 include('classes/classes.php');
 
 $x = new classesallfunction();
@@ -84,10 +94,9 @@ $x = new classesallfunction();
                   <a href="index.html" class="nav-link text-left">Home</a>
                 </li>
                 <li class="has-children">
-                  <a href="about.html" class="nav-link text-left">About Us</a>
+                  <a href="about.html" class="nav-link text-left">Profile</a>
                   <ul class="dropdown">
-                    <li><a href="teachers.html">Our Teachers</a></li>
-                    <li><a href="about.html">Our School</a></li>
+                    <li><a href="profile.php">My Profile</a></li>
                   </ul>
                 </li>
                 <li>

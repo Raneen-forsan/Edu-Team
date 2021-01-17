@@ -30,18 +30,18 @@ class QuizTF extends dbconnection{
     public $id_for_insert_course_id;
     public $course_id;
     public $course_name;
-
+    public $exam_name;
 
 	// public $category_name;
 
 	public function create()
 	{
 		$query = "INSERT INTO quiztf
-		(question,Cquestion,Cquestion1,c1,c2,c3,c4,correct_a,mark,exam_image,course_id)
+		(question,Cquestion,Cquestion1,c1,c2,c3,c4,correct_a,mark,exam_image,course_id,course_name,exam_name)
 
 		VALUES('$this->Nquestion','$this->Cquestion','$this->Cquestion1','$this->c1','$this->c2','$this->c3',
 		'$this->c4','$this->correct_a','$this->mark','$this->exam_image',
-		'$this->id_for_insert_course_id')";
+		'$this->id_for_insert_course_id','$this->course_name','$this->exam_name')";
 		 $this->performQuery($query);
 	}
 

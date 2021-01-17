@@ -1,3 +1,6 @@
+<?php include('classes/register_class.php');?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,10 +79,11 @@
                   <a href="index.html" class="nav-link text-left">Home</a>
                 </li>
                 <li class="has-children">
-                  <a href="about.html" class="nav-link text-left">About Us</a>
+                  <a href="about.html" class="nav-link text-left">Profile</a>
                   <ul class="dropdown">
-                    <li><a href="teachers.html">Our Teachers</a></li>
-                    <li><a href="about.html">Our School</a></li>
+                    <li><a href="profile.php">My Profile</a></li>
+                    <li><a href="course-single.php">My Exams</a></li>
+                    <li><a href="about.html">Logout</a></li>
                   </ul>
                 </li>
                 <li>

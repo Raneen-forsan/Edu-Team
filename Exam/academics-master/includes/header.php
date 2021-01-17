@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>Academics </title>
+  <title>Academics &mdash; Website by Colorlib</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -54,8 +55,8 @@
             <a href="#" class="small mr-3"><span class="icon-envelope-o mr-2"></span> info@mydomain.com</a> 
           </div>
           <div class="col-lg-3 text-right">
-            <a href="login.php" class="small mr-3"><span class="icon-unlock-alt"></span> Log In</a>
-            <a href="register.php" class="small btn btn-primary px-4 py-2 rounded-0"><span class="icon-users"></span> Register</a>
+            <a href="login.html" class="small mr-3"><span class="icon-unlock-alt"></span> Log In</a>
+            <a href="register.html" class="small btn btn-primary px-4 py-2 rounded-0"><span class="icon-users"></span> Register</a>
           </div>
         </div>
       </div>
@@ -72,26 +73,25 @@
           <div class="mr-auto">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li class="active">
+                <li>
                   <a href="index.html" class="nav-link text-left">Home</a>
                 </li>
                 <li class="has-children">
-                  <a href="about.html" class="nav-link text-left">About Us</a>
+                  <a href="about.html" class="nav-link text-left">Profile</a>
                   <ul class="dropdown">
-                    <li><a href="teachers.html">Our Teachers</a></li>
-                    <li><a href="about.html">Our School</a></li>
+                    <li><a href="profile.php">My Profile</a></li>
                   </ul>
                 </li>
                 <li>
                   <a href="admissions.html" class="nav-link text-left">Admissions</a>
                 </li>
-                <li>
+                <li class="active">
                   <a href="courses.html" class="nav-link text-left">Courses</a>
                 </li>
                 <li>
                     <a href="contact.html" class="nav-link text-left">Contact</a>
                   </li>
-              </ul> 
+              </ul>                                                                                             
             </ul>
             </nav>
 
@@ -111,4 +111,3 @@
       </div>
 
     </header>
-

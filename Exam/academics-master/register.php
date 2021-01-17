@@ -16,10 +16,28 @@
 
         if($x->password === $x->password1){
             $x->insertStudentData($x->full_name,$x->email,$x->password,$x->mobile,$x->image,$x->education_level);
+            header("location:register.php");
         }else{
             $error = "password doesnot match";
         }
-    }
+        
+        
+         
+            $_SESSION['email']      = $x->email;
+            $_SESSION['mobile']     = $x->mobile;
+            $_SESSION['education_level']  = $x->education_level;
+
+         }
+        
+        
+    
+
+     
+           
+        
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -5,27 +5,31 @@
 	session_start();
    
     $x = new login();
-    
-	if(isset($_SESSION['email'])){
-        header("location:index.php");
-    } 
-
+ 
     if(isset($_POST['login'])){
         $x->email      = $_POST['email'];
          $x->password   = $_POST['password'];
-
+         
          $check=$x->VerifyLogin();
+         $z=$x->VerifyLogin();
          if($check){
             $_SESSION['email']      = $x->email;
 
             $_SESSION['password']   = $x->password;
-            header("location:index.php"); 
-         }else{
+             
+        foreach($check as $value){
+            $_SESSION['full_name']=$value['full_name'];
+            $_SESSION['mobile']=$value['mobile'];
+            $_SESSION['education_level']=$value['education_level'];
+            $_SESSION['image']=$value['image'];
+        }
+            header("location:course-single.php"); 
+         }else if($z){
             $error = "User Not Found";
             
-        }
+        }}
         // echo '<meta http-equiv="refresh" content="0">';
-    }
+    
 
     
 ?>

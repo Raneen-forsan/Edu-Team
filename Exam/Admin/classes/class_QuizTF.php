@@ -31,7 +31,6 @@ class QuizTF extends dbconnection{
     public $course_id;
     public $course_name;
     public $exam_name;
-
 	// public $category_name;
 
 	public function create()

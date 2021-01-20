@@ -264,12 +264,20 @@ $query  = "SELECT DISTINCT  course_name FROM info_student,quiztf where info_stud
                               </div>
                               <div class="col-sm-9 text-secondary">
                                      <?php 
-                           $query  = "SELECT DISTINCT  (question),correct_a,course_name FROM info_student,quiztf where info_student.course_id=quiztf.course_id";              $result=mysqli_query($con,$query);
+                           $query  = "SELECT DISTINCT  (question),correct_a,course_name,c1,c2,c3,c4,Cquestion,Cquestion1 FROM info_student,quiztf where info_student.course_id=quiztf.course_id";              $result=mysqli_query($con,$query);
                              while($row=mysqli_fetch_assoc($result)){
                             echo "  (".$row['course_name'].")";
                             echo "<br>";
                                echo $row['question']." ";
-                               echo $row['correct_a'];
+                               echo "<br>";
+                               echo "<span style='color:lightgreen'>Correct Answer:</span>";
+                               echo "<span style='color:lightgreen'>{$row['correct_a']}</span>";
+                               echo "<p style='color:red'>{$row['c1']}</p>";
+                               echo "<p style='color:red'>{$row['c2']}</p>";
+                               echo "<p style='color:red'>{$row['c3']}</p>";
+                               echo "<p style='color:red'>{$row['c4']}</p>";
+                               echo "<p style='color:red'>{$row['Cquestion']}</p>";
+                               echo "<p style='color:red'>{$row['Cquestion1']}</p>";
                                echo "<br>";
                                echo "..........................";
                                echo "<br>";

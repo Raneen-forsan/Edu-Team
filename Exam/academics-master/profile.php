@@ -234,6 +234,7 @@
              while($row=mysqli_fetch_assoc($result)){
             
          echo $row['mark_total'];
+         echo "<br>";
                                                 
              } 
                                   ?>   
@@ -246,11 +247,11 @@
                               </div>
                               <div class="col-sm-9 text-secondary">
                                                    <?php 
-$query  = "SELECT * FROM info_student,quiztf where info_student.course_id=quiztf.course_id limit 1";                $result=mysqli_query($con,$query);
+$query  = "SELECT DISTINCT  course_name FROM info_student,quiztf where info_student.course_id=quiztf.course_id ";                $result=mysqli_query($con,$query);
              while($row=mysqli_fetch_assoc($result)){
             
          echo $row['course_name'];
-                                                
+         echo "<br>";                                       
              } 
                   ?>                              
                                 
@@ -263,10 +264,14 @@ $query  = "SELECT * FROM info_student,quiztf where info_student.course_id=quiztf
                               </div>
                               <div class="col-sm-9 text-secondary">
                                      <?php 
-                           $query  = "SELECT DISTINCT  (question),correct_a FROM info_student,quiztf where info_student.course_id=quiztf.course_id";              $result=mysqli_query($con,$query);
+                           $query  = "SELECT DISTINCT  (question),correct_a,course_name FROM info_student,quiztf where info_student.course_id=quiztf.course_id";              $result=mysqli_query($con,$query);
                              while($row=mysqli_fetch_assoc($result)){
+                            echo "  (".$row['course_name'].")";
+                            echo "<br>";
                                echo $row['question']." ";
                                echo $row['correct_a'];
+                               echo "<br>";
+                               echo "..........................";
                                echo "<br>";
                                                 
                                                                      } 

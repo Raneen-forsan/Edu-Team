@@ -84,12 +84,11 @@
                       echo" My Profile";
                       echo "</a>";
                       echo "</li>"; ?>
-                    <li><a href="course-single.php">My Exams</a></li>
                     <li><a href="about.html">Logout</a></li>
                   </ul>
                 </li>
                 <li>
-                  <a href="admissions.html" class="nav-link text-left">Admissions</a>
+                  <a href="course-single.php" class="nav-link text-left">My Exam</a>
                 </li>
                 <li>
                   <a href="courses.html" class="nav-link text-left">Courses</a>
@@ -162,8 +161,7 @@
               </div>
               <div class="feature-1-content">
                 <h2>Personalize Learning</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
-                <p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>
+                <p>If you like to learn by yourself you can do it by watch vedios. There are  very powerfull vedios </p>
               </div>
             </div>
           </div>
@@ -174,8 +172,7 @@
               </div>
               <div class="feature-1-content">
                 <h2>Trusted Courses</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
-                <p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>
+                <p>Benefit courses  for students and professional profesoors with us, You can learn every thing.  </p>
               </div>
             </div> 
           </div>
@@ -186,8 +183,7 @@
               </div>
               <div class="feature-1-content">
                 <h2>Tools for Students</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi hendrerit elit</p>
-                <p><a href="#" class="btn btn-primary px-4 rounded-0">Learn More</a></p>
+                <p>New Tools  and technology for learning, largests laboratory  and PC with technology</p>
               </div>
             </div> 
           </div>
@@ -203,9 +199,9 @@
         <div class="row mb-5 justify-content-center text-center">
           <div class="col-lg-6 mb-5">
             <h2 class="section-title-underline mb-3">
-              <span>Popular Courses</span>
+              <span>My Courses</span>
             </h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, id?</p>
+            <p>About Your courses that you participate in </p>
           </div>
         </div>
 
@@ -215,120 +211,78 @@
                   <div class="course-1-item">
                     <figure class="thumnail">
                       <a href="course-single.html"><img src="images/course_1.jpg" alt="Image" class="img-fluid"></a>
-                      <div class="price">$99.00</div>
-                      <div class="category"><h3>Mobile Application</h3></div>  
+                      <div class="category"><h3>HTML5</h3></div>  
                     </figure>
                     <div class="course-1-content pb-4">
-                      <h2>How To Create Mobile Apps Using Ionic</h2>
-                      <div class="rating text-center mb-3">
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                      </div>
-                      <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                      <p><a href="course-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
+                      <h2>How To Create Websites Using HTML5</h2>
+                    
+                      <p class="desc mb-4">You will learn how to develop websites by using HTML5.</p>
+                     
                     </div>
                   </div>
       
                   <div class="course-1-item">
                     <figure class="thumnail">
                       <a href="course-single.php"><img src="images/course_2.jpg" alt="Image" class="img-fluid"></a>
-                      <div class="price">$99.00</div>
-                      <div class="category"><h3>Web Design</h3></div>  
+                      <div class="category"><h3>PHP</h3></div>  
                     </figure>
                     <div class="course-1-content pb-4">
-                      <h2>How To Create Mobile Apps Using Ionic</h2>
-                      <div class="rating text-center mb-3">
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                      </div>
-                      <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                      <p><a href="course-single.php" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
+                      <h2>How To Create  Websites  Using PHP</h2>
+                     
+                      <p class="desc mb-4">You will learn how to develop websites by using PHP.</p>
+                      
                     </div>
                   </div>
       
                   <div class="course-1-item">
                     <figure class="thumnail">
                       <a href="course-single.html"><img src="images/course_3.jpg" alt="Image" class="img-fluid"></a>
-                      <div class="price">$99.00</div>
-                      <div class="category"><h3>Arithmetic</h3></div>  
+                      <div class="category"><h3>Maths</h3></div>  
                     </figure>
                     <div class="course-1-content pb-4">
-                      <h2>How To Create Mobile Apps Using Ionic</h2>
-                      <div class="rating text-center mb-3">
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                      </div>
-                      <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                      <p><a href="courses-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
+                      <h2>How To solve equations  by practical </h2>
+                     
+                      <p class="desc mb-4">You will learn how to solve equation by practical .</p>
+                     
                     </div>
                   </div>
 
                   <div class="course-1-item">
                     <figure class="thumnail">
                         <a href="course-single.html"><img src="images/course_4.jpg" alt="Image" class="img-fluid"></a>
-                      <div class="price">$99.00</div>
-                      <div class="category"><h3>Mobile Application</h3></div>  
+                      <div class="category"><h3>Science</h3></div>  
                     </figure>
                     <div class="course-1-content pb-4">
-                      <h2>How To Create Mobile Apps Using Ionic</h2>
-                      <div class="rating text-center mb-3">
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                      </div>
-                      <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                      <p><a href="course-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
+                      <h2>How To understand science by practical way in lab</h2>
+                    
+                      <p class="desc mb-4">You will learn how to undersatnd science  by practical .</p>
+                      
                     </div>
                   </div>
       
                   <div class="course-1-item">
                     <figure class="thumnail">
                         <a href="course-single.html"><img src="images/course_5.jpg" alt="Image" class="img-fluid"></a>
-                      <div class="price">$99.00</div>
-                      <div class="category"><h3>Web Design</h3></div>  
+                      <div class="category"><h3>Arabic</h3></div>  
                     </figure>
                     <div class="course-1-content pb-4">
-                      <h2>How To Create Mobile Apps Using Ionic</h2>
-                      <div class="rating text-center mb-3">
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                      </div>
-                      <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                      <p><a href="course-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
+                      <h2>How To read Write in Arabic and understand the language.</h2>
+                     
+                      <p class="desc mb-4">You will learn how to undersatnd Arabic  by practical .</p>
+                      
                     </div>
                   </div>
       
                   <div class="course-1-item">
                     <figure class="thumnail">
                         <a href="course-single.html"><img src="images/course_6.jpg" alt="Image" class="img-fluid"></a>
-                      <div class="price">$99.00</div>
-                      <div class="category"><h3>Mobile Application</h3></div>  
+                      <div class="category"><h3>English</h3></div>  
                     </figure>
                     <div class="course-1-content pb-4">
-                      <h2>How To Create Mobile Apps Using Ionic</h2>
-                      <div class="rating text-center mb-3">
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-warning"></span>
-                      </div>
-                      <p class="desc mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique accusantium ipsam.</p>
-                      <p><a href="course-single.html" class="btn btn-primary rounded-0 px-4">Enroll In This Course</a></p>
+                      <h2>How To read Write in English and understand the language.</h2>
+                    
+                      <p class="desc mb-4">You will learn how to undersatnd English  by practical </p>
+                      
                     </div>
                   </div>
       
@@ -356,7 +310,6 @@
           <div class="col-lg-8">
             <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem nesciunt quaerat ad reiciendis perferendis voluptate fugiat sunt fuga error totam.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus assumenda omnis tempora ullam alias amet eveniet voluptas, incidunt quasi aut officiis porro ad, expedita saepe necessitatibus rem debitis architecto dolore? Nam omnis sapiente placeat blanditiis voluptas dignissimos, itaque fugit a laudantium adipisci dolorem enim ipsum cum molestias? Quod quae molestias modi fugiat quisquam. Eligendi recusandae officiis debitis quas beatae aliquam?</p>
-            <p><a href="#">Read more</a></p>
           </div>
         </div>
       </div>
@@ -380,12 +333,12 @@
             <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
               <img src="images/person_1.jpg" alt="Image" class="img-fluid mr-3">
               <div>
-                <h3>Allison Holmes</h3>
-                <span>Designer</span>
+                <h3>prof.Allison Holmes</h3>
+                <span>Developer</span>
               </div>
             </div>
             <div>
-              <p>&ldquo;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet necessitatibus. A, provident aperiam!&rdquo;</p>
+              <p>&ldquo;The Presidency Office is the headquarters of the Hashemite University, managing its administrative and business operations. In addition, the Office manages the process of supporting the academic and research missions across its faculties, departments, and centers. &rdquo;</p>
             </div>
           </div>
 
@@ -393,12 +346,12 @@
             <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
               <img src="images/person_2.jpg" alt="Image" class="img-fluid mr-3">
               <div>
-                <h3>Allison Holmes</h3>
+                <h3>prof.Allison Holmes</h3>
                 <span>Designer</span>
               </div>
             </div>
             <div>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet necessitatibus. A, provident aperiam!</p>
+              <p> It is oriented toward achieving an academic pioneering position and excellence in university teaching, scientific research, at  both the national and regional levels, to serve society through its educational functions, and to participate in the advancement of knowledge.</p>
             </div>
           </div>
 
@@ -407,11 +360,11 @@
               <img src="images/person_4.jpg" alt="Image" class="img-fluid mr-3">
               <div>
                 <h3>Allison Holmes</h3>
-                <span>Designer</span>
+                <span>Manger</span>
               </div>
             </div>
             <div>
-              <p>&ldquo;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet necessitatibus. A, provident aperiam!&rdquo;</p>
+              <p>&ldquo;. This system provides students with the needed amount of flexibility and freedom in choosing the courses that satisfy their preferences and their academic, cultural and social aspirations. It also intensifies the opportunities of students from different faculties and institutes to interact and communicate with each other effectively.&rdquo;</p>
             </div>
           </div>
 
@@ -420,11 +373,11 @@
               <img src="images/person_3.jpg" alt="Image" class="img-fluid mr-3">
               <div>
                 <h3>Allison Holmes</h3>
-                <span>Designer</span>
+                <span>Professor Science</span>
               </div>
             </div>
             <div>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet necessitatibus. A, provident aperiam!</p>
+              <p>This system provides students with the needed amount of flexibility and freedom in choosing the courses that satisfy their preferences and their academic, cultural and social aspirations. It also intensifies the opportunities of students from different faculties and institutes to interact and communicate with each other effectively.</p>
             </div>
           </div>
 
@@ -433,11 +386,12 @@
               <img src="images/person_2.jpg" alt="Image" class="img-fluid mr-3">
               <div>
                 <h3>Allison Holmes</h3>
-                <span>Designer</span>
+                <span>Teacher Math</span>
               </div>
             </div>
             <div>
-              <p>&ldquo;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet necessitatibus. A, provident aperiam!&rdquo;</p>
+              <p>&ldquo; The Presidency Office is the headquarters of the Hashemite University, managing its administrative and business operations. In addition, the Office manages the process of supporting the academic and research missions across its faculties, departments, and centers. 
+&rdquo;</p>
             </div>
           </div>
 
@@ -446,11 +400,11 @@
               <img src="images/person_4.jpg" alt="Image" class="img-fluid mr-3">
               <div>
                 <h3>Allison Holmes</h3>
-                <span>Designer</span>
+                <span>Developer</span>
               </div>
             </div>
             <div>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet necessitatibus. A, provident aperiam!</p>
+              <p>he Presidency Office is the headquarters of the Hashemite University, managing its administrative and business operations. In addition, the Office manages the process of supporting the academic and research missions across its faculties, departments, and centers.</p>
             </div>
           </div>
 

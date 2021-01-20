@@ -12,7 +12,7 @@ class classesallfunction extends dbconnection
 	public $id_courses;
 
 	public function ReadQuestion(){
-		$query  = "SELECT * FROM quiztf WHERE course_id = '$this->id_url' ";
+		$query  = "SELECT * FROM quiztf WHERE course_id = '$this->id_url' ORDER BY RAND()";
 	    $result = $this->performQuery($query);
 	    return    $this->fetchAll($result);
 	}

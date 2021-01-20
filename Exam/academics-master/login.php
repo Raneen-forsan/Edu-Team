@@ -23,6 +23,16 @@
             $_SESSION['image']=$value['image'];
         }
              
+        $check2=$x->formark();
+         foreach($check2 as $value){
+            $_SESSION['course_id']=$value['course_id'];
+            $_SESSION['question']=$value['course_id'];
+            $_SESSION['correct_a']=$value['course_id'];
+            $_SESSION['course_name']=$value['course_id'];
+            
+        } 
+            
+       
             
             header("location:course-single.php"); 
          }else {

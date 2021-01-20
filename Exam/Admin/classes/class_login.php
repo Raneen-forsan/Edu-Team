@@ -1,5 +1,5 @@
 <?php
-	require('../Admin/include/DBconnection.php');
+	require('include/DBconnection.php');
 	
 	class login extends dbconnection{
 		public $email;

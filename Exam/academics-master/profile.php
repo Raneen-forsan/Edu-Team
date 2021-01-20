@@ -228,7 +228,6 @@
                               </div>
                               <div class="col-sm-9 text-secondary">
                               <?php     
-              $id=$_GET['id'];
               $p=$_SESSION['student_id'];
               $query="SELECT * FROM info_student where student_id  ='$p'";
               $result=mysqli_query($con,$query);
@@ -243,20 +242,35 @@
                             <hr>
                             <div class="row">
                               <div class="col-sm-3">
-                                <h6 class="mb-0">Correct answer</h6>
+                                <h6 class="mb-0">Course Name</h6>
                               </div>
                               <div class="col-sm-9 text-secondary">
-                              <?php echo $_SESSION['email']; ?>                              
+                                                   <?php 
+$query  = "SELECT * FROM info_student,quiztf where info_student.course_id=quiztf.course_id limit 1";                $result=mysqli_query($con,$query);
+             while($row=mysqli_fetch_assoc($result)){
+            
+         echo $row['course_name'];
+                                                
+             } 
+                  ?>                              
                                 
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                               <div class="col-sm-3">
-                                <h6 class="mb-0">Wrong answer</h6>
+                                <h6 class="mb-0">Question</h6>
                               </div>
                               <div class="col-sm-9 text-secondary">
-                             <?php echo $_SESSION['mobile']; ?>                               </div>
+                                     <?php 
+                           $query  = "SELECT DISTINCT  (question),correct_a FROM info_student,quiztf where info_student.course_id=quiztf.course_id";              $result=mysqli_query($con,$query);
+                             while($row=mysqli_fetch_assoc($result)){
+                               echo $row['question']." ";
+                               echo $row['correct_a'];
+                               echo "<br>";
+                                                
+                                                                     } 
+                  ?>                              </div>
                             </div>
                             <hr>
                             <div class="row">

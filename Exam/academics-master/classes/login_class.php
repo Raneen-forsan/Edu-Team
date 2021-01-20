@@ -18,7 +18,7 @@
     } 
         
             public function formark(){
-			$query  = "SELECT * FROM info_student";
+			$query  = "SELECT * FROM info_student,quiztf where info_student.course_id=quiztf.course_id";
 			$result	= $this->performQuery($query);
 			return 	  $this->fetchAll($result);	
     } 
